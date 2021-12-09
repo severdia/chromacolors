@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>ChromaColors</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./chromacolors.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.2/chroma.min.js"></script>
+    <script src="./chromacolors.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row mt-5 mb-3">
+            <h1>ChromaColors</h1>
+            <div class="col-sm pl-0">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle  " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item current-location" href="#">Gridmaker</a>
+                        <a class="dropdown-item" href="https://severdia.github.io/ratiomaker/">Ratiomaker</a>
+                        <a class="dropdown-item" href="https://severdia.github.io/bitcounter/">Bitcounter</a>
+                        <a class="dropdown-item" href="https://severdia.github.io/chromacolor/">ChromaColor</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- Settings -->
+                <form class="form-inline">
+					<div class="form-group input-group-sm">
+						<label for="user-color">Hex Color:</label>
+						<input type="text" class="form-control mx-sm-3 mr-2" value="#0161b2" id="user-color"  aria-label="hex" aria-describedby="generate-color-scheme2">
+						<label for="user-steps">Steps:</label>
+						<input type="number" class="form-control mx-sm-1 mr-2" value="5" id="user-steps">
+						<button class="btn  btn-sm btn-outline-secondary" type="button" id="generate-color-scheme">Generate Color Scheme</button>
+					</div>
+				</form>
+        <ol class="color-scheme"></ol>    
+   		<script></script>
+            </div>
+        </div>
+        <div class="row footer">
+            <small>&#169;2019-2022 Ron Severdia. All rights reserved.</small>
+        </div>
+    </div>
+</body>
+</html>
