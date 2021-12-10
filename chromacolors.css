@@ -36,10 +36,17 @@ h6 {
 }
 
 #user-color {
-	width: 120px
+	width: 100px;
 }
+#user-color-picker{
+	width: 40px;
+	height:40px;
+	margin: 0px 10px;
+	padding :5px;
+}
+
 #user-steps {
-	width: 120px
+	width: 120px;
 }
 
 
