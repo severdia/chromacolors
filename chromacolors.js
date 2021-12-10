@@ -2,7 +2,7 @@ const STEPS = 5; // is preferably an odd number
 const USER_COLOR = '#0161b2';
 
 document.addEventListener('DOMContentLoaded', function () {
-	var btnGenerateColorScheme = document.getElementById('generate-color-scheme'),
+	const btnGenerateColorScheme = document.getElementById('generate-color-scheme'),
 		btnGenerateColorScale = document.getElementById('generate-color-scale'),
 		colorScheme = document.querySelector('.color-scheme'),
 		userColorInput = document.getElementById('user-color'),
@@ -11,9 +11,11 @@ document.addEventListener('DOMContentLoaded', function () {
 		btnClear = document.getElementById('clear'),
 		colorScale = document.querySelector('.color-scale'),
 		stepsInput = document.getElementById('user-steps'),
-		chromaColor, colorList;
+		constrain = document.getElementById('constrain');
+	let colorList;
 
 	userColorInput.value = USER_COLOR;
+	userColorPicker.value = USER_COLOR;
 	stepsInput.value = STEPS;
 
 	btnGenerateColorScheme.addEventListener('click', function () {
@@ -30,30 +32,47 @@ document.addEventListener('DOMContentLoaded', function () {
 		colorScheme.innerHTML = '';
 
 		// Initialize Chroma.
-		chromaColor = chroma(userColor);
+		let chromaColor = chroma(userColor);
 
-		// Create a monchromatic color scheme.
-		switch (position.value) {
-			//start
-			case '1': for (var i = 0; i < steps; i++) {
-				colorList[i] = chromaColor.darken(i);
+		let isConstrained = constrain.checked;
+
+		if (isConstrained) {
+			// Create a monchromatic color scheme.
+			switch (position.value) {
+				//start
+				case '1': colorList = chroma.scale([userColor, '#000000']).mode('lab').colors(steps);
+					break;
+				//middle
+				case '2': colorList = chroma.scale(['#FFFFFF', userColor, '#000000']).mode('lab').colors(steps);
+					break;
+				//end	
+				case '3': colorList = chroma.scale(['#FFFFFF', userColor]).mode('lab').colors(steps);
+					break;
 			}
-				break;
-			//middle
-			case '2': for (var i = 0; i < steps; i++) {
-				colorList[i] = chromaColor.darken(i - Math.floor(steps / 2));
+		} else {
+			switch (position.value) {
+				//start
+				case '1': for (let i = 0; i < steps; i++) {
+					colorList[i] = chromaColor.darken(i);
+				}
+					break;
+				//middle
+				case '2': for (let i = 0; i < steps; i++) {
+					colorList[i] = chromaColor.darken(i - Math.floor(steps / 2));
+				}
+					break;
+				//end	
+				case '3': for (let i = 0; i < steps; i++) {
+					colorList[i] = chromaColor.darken(i - (steps - 1));
+				}
+					break;
 			}
-				break;
-			//end	
-			case '3': for (var i = 0; i < steps; i++) {
-				colorList[i] = chromaColor.darken(i - (steps - 1));
-			}
-				break;
+
 		}
 
 		// Generate some elements.
-		for (var j = 0; j < colorList.length; j++) {
-			var newItem = document.createElement('li');
+		for (let j = 0; j < colorList.length; j++) {
+			let newItem = document.createElement('li');
 
 			newItem.style.backgroundColor = colorList[j];
 			newItem.innerHTML = `<div class="color-info">
