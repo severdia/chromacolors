@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', function () {
 		colorList = [];
 
 		// Get the steps count
-		steps = stepsInput.value;
+		let steps = stepsInput.value;
 
 		// Get the color value.
-		userColor = userColorInput.value;
+		let userColor = userColorInput.value;
 
 		// Reset the content of the color scheme list.
 		colorScheme.innerHTML = '';
