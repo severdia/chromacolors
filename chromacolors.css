@@ -21,21 +21,29 @@ h6 {
     margin-top: 19px;
     margin-left: 5px;
 }
-#dropdownMenuButton:after{   
+#dropdownMenuButton:after {   
     margin-left:1px;    
     vertical-align: 0.58em;    
 }
-#dropdownMenuButton:focus{    
+#dropdownMenuButton:focus {    
     box-shadow: none;
 }
-.dropdown-item{
+.dropdown-item {
     color:#007bff;
 }
-.current-location{
+.current-location {
     color:black;
 }
 
+#user-color {
+	width: 120px
+}
+#user-steps {
+	width: 120px
+}
 
+
+/*
 .container {
 	width: 85%;
 	margin: 2rem auto;
@@ -43,6 +51,7 @@ h6 {
 label {
 	display: block;
 }
+ */
 .color-scheme,
 .color-scale {
 	margin: 3rem auto;

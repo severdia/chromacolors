@@ -27,25 +27,34 @@
         </div>
         <div class="row">
             <div class="col">
-                <form class="form-inline">
-					<div class="form-group input-group-sm">
+               <form class="row row-cols-lg-auto align-items-center">
+					<div class="col12">
 						<label for="user-color">Hex Color:</label>
-						<input type="text" class="form-control mx-sm-3 mr-2" value="#0161b2" id="user-color"  aria-label="hex" aria-describedby="generate-color-scheme2">
-						<div class="btn-group">
-							<button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">MIddle</button>
-						 	 <ul class="dropdown-menu">
-								<li>Beginning</li>
-								<li>Middle</li>
-								<li>End</li>
-						  	</ul>
-						</div>
+						<input type="text" class="form-control" value="#0161b2" id="user-color"  aria-label="hex" aria-describedby="generate-color-scheme2">
+					</div>
+					<div class="col12">
+						<label for="color-position">Position:</label>
+						<select class="form-select" aria-label="Select position">
+							<option selected>MIddle</option>
+							<option value="1">Beginning</option>
+							<option value="2">MIddle</option>
+							<option value="3">End</option>
+						</select>
+					</div>
+					<div class="col12">
 						<label for="user-steps">Steps:</label>
-						<input type="number" class="form-control mx-sm-1 mr-2" value="5" id="user-steps">
-						<button class="btn  btn-sm btn-primary" type="button" id="generate-color-scheme">Generate Scheme</button>
-						<button type="button" class="btn btn-link">Clear</button>
+						<input type="number" class="form-control" value="5" id="user-steps">
+					</div>
+					<div class="col12">
+						<button class="btn  btn-sm btn-primary mt-4" type="button" id="generate-color-scheme">Generate Scheme</button>
+						<button type="button" class="btn btn-link mt-4">Clear</button>
 					</div>
 				</form>
-				<ol class="color-scheme"></ol>    
+            </div>
+        </div>
+  		<div class="row">
+            <div class="col">		
+        		<ol class="color-scheme"></ol>    
 				<script></script>
             </div>
         </div>
