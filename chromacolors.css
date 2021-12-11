@@ -103,3 +103,7 @@ label {
     -webkit-appearance: auto;
     appearance: auto;
 }
+input[type="checkbox"]{
+	display: block;
+	text-align: center;
+}
